@@ -3,12 +3,36 @@ import bgImg from "../../assets/register.jpg";
 import logo from "../../assets/icon.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Registration = () => {
 
     const navigate = useNavigate();
     const { createUser, signInWithGoogle, updateUserProfile, user, setUser } = useContext(AuthContext);
+
+    // sign up
+    const handleSignUp = async e => {
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+        console.log( email, password, name, photo);
+        try{
+            const result = await createUser(email, password)
+            console.log(result);
+            await updateUserProfile(name, photo)
+            setUser({...user, photoURL: photo, displayName: name})
+            navigate('/')
+            toast.success('SignUp Successfully')
+        }
+        catch(err){
+            console.log(err);
+            toast.error(err?.message)
+        }
+    }
 
     // google signIn
     const handleGoogleSignIn = async () => {
@@ -77,7 +101,7 @@ const Registration = () => {
 
                         <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
                     </div>
-                    <form>
+                    <form onSubmit={handleSignUp}>
                         <div className='mt-4'>
                             <label
                                 className='block mb-2 text-sm font-medium text-gray-600 '
