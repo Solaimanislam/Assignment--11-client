@@ -22,7 +22,7 @@ const NavBar = () => {
                         <Link to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link>Service</Link>
+                        <Link to='/allService'>Service</Link>
                     </li>
 
                     {!user && (
