@@ -1,0 +1,59 @@
+[
+    {
+      "image_url": "https://i.ibb.co/ky9D5rx/h1.jpg",
+      "service_name": "Plumbing Services",
+      "price": "$80",
+      "service_area": "Citywide",
+      "description": "Professional plumbing services for residential and commercial properties. We fix leaks, unclog drains, repair pipes, and more."
+    },
+    {
+      "image_url": "https://i.ibb.co/DMMjfWS/h2.jpg",
+      "service_name": "Cleaning Services",
+      "price": "$50",
+      "service_area": "Neighborhood",
+      "description": "Top-notch cleaning services for homes and offices. We offer deep cleaning, regular maintenance, and specialized cleaning solutions."
+    },
+    {
+      "image_url": "https://i.ibb.co/pfVfxbk/h3.jpg",
+      "service_name": "Painting Services",
+      "price": "$200",
+      "service_area": "Metro Area",
+      "description": "Professional painting services for interior and exterior spaces. Our skilled painters deliver high-quality results with attention to detail."
+    },
+    {
+      "image_url": "https://i.ibb.co/9tQqppb/h4.jpg",
+      "service_name": "Electrical Services",
+      "price": "$100",
+      "service_area": "Countywide",
+      "description": "Expert electrical services including installations, repairs, and maintenance. We ensure safety and compliance with electrical codes."
+    },
+    {
+      "image_url": "https://i.ibb.co/PMQhjCh/h5.jpg",
+      "service_name": "Landscaping Services",
+      "price": "$150",
+      "service_area": "Suburbs",
+      "description": "Transform your outdoor space with our landscaping services. We offer design, installation, and maintenance for gardens, lawns, and more."
+    },
+    {
+      "image_url": "https://i.ibb.co/TgVKRnm/h6.jpg",
+      "service_name": "Moving Services",
+      "price": "$300",
+      "service_area": "Statewide",
+      "description": "Efficient and reliable moving services for residential and commercial relocations. We handle packing, transportation, and unpacking."
+    },
+    {
+      "image_url": "https://i.ibb.co/wC8kcrh/h7.jpg",
+      "service_name": "HVAC Services",
+      "price": "$120",
+      "service_area": "Citywide",
+      "description": "Keep your indoor environment comfortable with our HVAC services. We offer installations, repairs, and maintenance for heating and cooling systems."
+    },
+    {
+      "image_url": "https://i.ibb.co/565T4xq/h8.webp",
+      "service_name": "Appliance Repair Services",
+      "price": "$80",
+      "service_area": "Neighborhood",
+      "description": "Prompt and efficient appliance repair services for all major brands. We fix refrigerators, washers, dryers, dishwashers, and more."
+    }
+  ]
+  

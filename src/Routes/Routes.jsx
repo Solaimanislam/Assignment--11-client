@@ -3,16 +3,21 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
+import PrivateRoutes from "./PrivateRoutes";
+import AddService from "../Pages/AddServices/AddService";
+import Error from "../Pages/Error/Error";
+
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Error></Error>,
       children: [
         {
             path: '/',
-            element: <Home></Home>
-            
+            element: <Home></Home>,
+            loader: () => fetch('http://localhost:5000/services')
         },
         {
             path: '/login',
@@ -22,7 +27,10 @@ const router = createBrowserRouter([
         {
             path: '/registration',
             element: <Register></Register>
-            
+        },
+        {
+            path: 'addServices',
+            element: <PrivateRoutes><AddService></AddService></PrivateRoutes>
         },
       ],
     },
