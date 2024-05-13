@@ -20,9 +20,9 @@ const AddService = () => {
         const email = user.email;
         const uName = user.displayName
         const image = form.image.value;
-        // const uImage = form.uImage.value;
+        const uImage = form.uImage.value;
 
-        const newService = { name, price, area, description, email, uName, image};
+        const newService = { name, price, area, description, email, uName, image, uImage};
 
         console.log(newService);
 
@@ -114,7 +114,7 @@ const AddService = () => {
                         <input type="text" name="uName" disabled placeholder={user.displayName} className="input input-bordered w-full" />
                     </label>
                 </div>
-                {/* <div>
+                <div>
                     <label className="form-control md:w-full">
                         <div className="label">
                             <span className="label-text text-xl">User Image</span>
@@ -122,7 +122,7 @@ const AddService = () => {
                         <input type="text" name="uImage" disabled placeholder={user.photoURL
                         } className="input input-bordered w-full" />
                     </label>
-                </div> */}
+                </div>
 
                 {/* button */}
 
