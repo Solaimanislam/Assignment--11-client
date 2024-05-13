@@ -1,8 +1,10 @@
 
 import { Link } from 'react-router-dom';
 import errorImg from '../../assets/error.webp'; 
+import { TabTitle } from '../Utils/title';
 
 const Error = () => {
+    TabTitle('Error');
     return (
         <div className=" text-center mx-auto lg:mt-20" data-aos="zoom-in-right"
         data-aos-easing="ease-out-cubic"

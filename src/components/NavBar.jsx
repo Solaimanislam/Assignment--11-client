@@ -30,7 +30,7 @@ const NavBar = () => {
             <div className='flex-1'>
                 <Link to='/' className='flex gap-2 items-center'>
                     <img className='w-auto h-7' src={logo} alt='' />
-                    <span className='font-bold'>HomeService</span>
+                    <span className='font-bold text-2xl text-sky-500'>Home<span className=' text-red-600'>S</span>ervice</span>
                 </Link>
             </div>
             <div className='flex-none'>
@@ -43,15 +43,15 @@ const NavBar = () => {
                         </label>
                     </div>
                     <li >
-                        <Link to='/'>Home</Link>
+                        <Link to='/' className=' text-sky-500 font-semibold'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/allService'>Service</Link>
+                        <Link to='/allService' className=' text-sky-500 font-semibold'>Service</Link>
                     </li>
 
                     {!user && (
                         <li>
-                            <Link to='/login'>Login</Link>
+                            <Link to='/login' className=' text-sky-500 font-semibold'>Login</Link>
                         </li>
                     )}
 
@@ -77,10 +77,10 @@ const NavBar = () => {
                             className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
                         >
                             <li>
-                                <Link to='/addServices' className='justify-between'>Add Service</Link>
+                                <Link to='/addServices' className='justify-between text-sky-500 font-semibold'>Add Service</Link>
                             </li>
                             <li>
-                                <Link to='/manageService'>Manage Service</Link>
+                                <Link to='/manageService' className=' text-sky-500 font-semibold'>Manage Service</Link>
                             </li>
                             <li>
                                 <div>Booked-Services</div>

@@ -1,12 +1,16 @@
 
+import { useContext } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { TabTitle } from "../Utils/title";
 
 
 
 const Details = () => {
+    TabTitle('Details');
 
-
+    const { user } = useContext(AuthContext);
 
     const loaderService = useLoaderData();
 
@@ -20,11 +24,11 @@ const Details = () => {
 
     return (
         <div className='flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto '>
-            <div className="card card-side bg-base-100 shadow-xl ">
+            <div className="card  bg-base-100 shadow-xl ">
 
 
 
-                <figure><img src={service.uImage} alt="Movie" /></figure>
+                <figure><img className="w-full" src={user?.photoURL} alt="Movie" /></figure>
 
                 <div className="card-body">
                     <h2 className=" text-center text-2xl font-bold text-purple-600">Service Provider Information:</h2>
@@ -65,7 +69,7 @@ const Details = () => {
                         <div className=" flex items-center lg:text-lg font-semibold gap-3 ">
 
                             <Fade direction="right">
-                                <p className="  text-green-400"><span className=" text-black font-bold">Provider_Image: </span><img className=" w-10 h-10" src={service.uImage} alt="" /> </p>
+                                <p className="flex gap-3  text-green-400"><span className=" text-black font-bold">Provider_Image: </span><img className=" rounded-full w-10 h-10" src={user?.photoURL} alt="" /> </p>
                             </Fade>
                         </div>
                         <div className=" flex items-center text-lg font-semibold gap-3 ">
@@ -76,10 +80,10 @@ const Details = () => {
                         </div>
                     </div>
                     <div className="card-actions justify-end">
-                    <Link
-                        to={`/bookService/${service._id}`}
-                    ><button className="btn btn-outline btn-secondary">Book Now</button></Link>
-                </div>
+                        <Link
+                            to={`/bookService/${service._id}`}
+                        ><button className="btn btn-outline btn-secondary">Book Now</button></Link>
+                    </div>
 
                 </div>
             </div>

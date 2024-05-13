@@ -2,9 +2,11 @@
 import { Link } from "react-router-dom";
 import Bannar from "../components/Bannar";
 import PopServices from "./PopServices/PopServices";
+import { TabTitle } from "./Utils/title";
 
 
 const Home = () => {
+    TabTitle('Home');
 
     // const service = useLoaderData();
     // console.log(service);

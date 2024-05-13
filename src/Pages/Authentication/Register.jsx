@@ -4,9 +4,11 @@ import logo from "../../assets/icon.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { TabTitle } from "../Utils/title";
 
 
 const Registration = () => {
+    TabTitle('Registration');
 
     const navigate = useNavigate();
     const { createUser, signInWithGoogle, updateUserProfile, user, setUser } = useContext(AuthContext);

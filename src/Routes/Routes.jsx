@@ -9,6 +9,8 @@ import Error from "../Pages/Error/Error";
 import AllService from "../Pages/AllService/AllService";
 import Details from "../Pages/PopServices/Details";
 import BookService from "../Pages/BookedService/BookService";
+import ManageService from "../Pages/ManageService/ManageService";
+import UpdateService from "../Pages/UpdateService/UpdateService";
 
 
 const router = createBrowserRouter([
@@ -49,7 +51,16 @@ const router = createBrowserRouter([
         path: '/bookService/:id',
         element: <PrivateRoutes><BookService></BookService></PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/services')
-      }
+      },
+      {
+        path: 'manageService',
+        element: <PrivateRoutes><ManageService></ManageService></PrivateRoutes>
+      },
+      {
+        path: 'manageService/updateService/:id',
+        element: <UpdateService></UpdateService>,
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+      },
     ],
   },
 ]);

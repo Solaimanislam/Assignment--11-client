@@ -4,9 +4,11 @@ import logo from "../../assets/icon.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { TabTitle } from "../Utils/title";
 
 
 const Login = () => {
+  TabTitle('Login');
     const navigate = useNavigate();
 
     const {signIn, signInWithGoogle} = useContext(AuthContext);

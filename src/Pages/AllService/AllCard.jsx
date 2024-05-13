@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 const AllCard = ({ ser }) => {
 
-    const { _id, name, price, area, description, email, uName, image } = ser;
+    const { _id, name, price, area, description, uName, image } = ser;
 
 
     return (
@@ -47,3 +48,8 @@ const AllCard = ({ ser }) => {
 };
 
 export default AllCard;
+
+AllCard.propTypes = {
+    ser: PropTypes.node
+}
+
