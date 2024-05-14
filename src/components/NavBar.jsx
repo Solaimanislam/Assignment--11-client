@@ -30,7 +30,7 @@ const NavBar = () => {
             <div className='flex-1'>
                 <Link to='/' className='flex gap-2 items-center'>
                     <img className='w-auto h-7' src={logo} alt='' />
-                    <span className='font-bold text-2xl text-sky-500'>Home<span className=' text-red-600'>S</span>ervice</span>
+                    <span className='lg:font-bold lg:text-2xl text-sky-500'>Home<span className=' text-red-600'>S</span>ervice</span>
                 </Link>
             </div>
             <div className='flex-none'>
@@ -42,16 +42,19 @@ const NavBar = () => {
                             <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                         </label>
                     </div>
-                    <li >
-                        <Link to='/' className=' text-sky-500 font-semibold'>Home</Link>
+
+                    
+
+                    <li className='mt-2'>
+                        <Link to='/' className=' text-sky-500 lg:font-semibold md:mx-4 m-0 md:px-4 p-0 '>Home</Link>
                     </li>
-                    <li>
-                        <Link to='/allService' className=' text-sky-500 font-semibold'>Service</Link>
+                    <li className=' mt-2'>
+                        <Link to='/allService' className='md:mx-4 m-0 md:px-4 p-0 text-sky-500 lg:font-semibold'>Service</Link>
                     </li>
 
                     {!user && (
                         <li>
-                            <Link to='/login' className=' text-sky-500 font-semibold'>Login</Link>
+                            <Link to='/login' className=' text-sky-500 lg:font-semibold'>Login</Link>
                         </li>
                     )}
 
@@ -86,7 +89,7 @@ const NavBar = () => {
                                 <Link to='/my-book' className=' text-sky-500 font-semibold'>Booked-Services</Link>
                             </li>
                             <li>
-                                <div>Service-To-Do</div>
+                                <Link to='/service-do' className='text-sky-500 font-semibold'>Service-To-Do</Link>
                             </li>
                             <li className='mt-2'>
                                 <button onClick={logOut} className='bg-gray-200 block text-center'>Logout</button>

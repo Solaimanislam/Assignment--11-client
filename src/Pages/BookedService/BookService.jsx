@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 // import Swal from "sweetalert2";
 import { TabTitle } from "../Utils/title";
@@ -16,6 +16,7 @@ const BookService = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const bookLoader = useLoaderData();
     console.log(bookLoader);
@@ -59,11 +60,12 @@ const BookService = () => {
             if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Service Added Successfully',
+                        text: 'Service Purchased Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
                 }
+                navigate('/my-book');
         }catch (err) {
             console.log(err);
         }

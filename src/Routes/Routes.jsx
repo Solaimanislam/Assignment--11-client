@@ -12,6 +12,7 @@ import BookService from "../Pages/BookedService/BookService";
 import ManageService from "../Pages/ManageService/ManageService";
 import UpdateService from "../Pages/UpdateService/UpdateService";
 import MyBook from "../Pages/Mybooking/MyBook";
+import ServiceDo from "../Pages/ServiceDo/ServiceDo";
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: 'my-book',
         element: <PrivateRoutes><MyBook></MyBook></PrivateRoutes>
+      },
+      {
+        path: 'service-do',
+        element: <PrivateRoutes><ServiceDo></ServiceDo></PrivateRoutes>
       },
       {
         path: 'manageService/updateService/:id',

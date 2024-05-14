@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 
-
-const MyBook = () => {
+const ServiceDo = () => {
 
     const {user} = useContext(AuthContext);
 
@@ -14,13 +13,15 @@ const MyBook = () => {
     }, [user])
 
     const getDate = async () => {
-        const { data } = await axios(`http://localhost:5000/my-book/${user?.email}`)
+        const { data } = await axios(`http://localhost:5000/service-do/${user?.email}`)
         setBook(data)
     }
+    console.log(book);
+
     // handleStatus
-    const handleStatus = async (id, status) => {
-       
-        console.log(id);
+    const handleStatus = async (id, prevStatus, status) => {
+        if(prevStatus === status) return console.log('Error');
+        console.log(id,prevStatus, status);
         const {data} = await axios.patch(`http://localhost:5000/book/${id}`, {status})
         console.log(data);
         getDate()
@@ -29,10 +30,10 @@ const MyBook = () => {
     return (
       <section className='container px-4 mx-auto pt-12'>
         <div className='flex items-center gap-x-3'>
-          <h2 className='text-lg font-medium text-orange-700 '>My Book</h2>
+          <h2 className='text-lg font-medium text-gray-800 '>Bid Requests</h2>
   
           <span className='px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full '>
-            {book.length}
+            {book.length} Requests
           </span>
         </div>
   
@@ -49,6 +50,14 @@ const MyBook = () => {
                       >
                         <div className='flex items-center gap-x-3'>
                           <span>Title</span>
+                        </div>
+                      </th>
+                      <th
+                        scope='col'
+                        className='py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500'
+                      >
+                        <div className='flex items-center gap-x-3'>
+                          <span>Email</span>
                         </div>
                       </th>
   
@@ -68,7 +77,7 @@ const MyBook = () => {
                         </button>
                       </th>
   
-                      
+                     
                       <th
                         scope='col'
                         className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
@@ -82,15 +91,18 @@ const MyBook = () => {
                     </tr>
                   </thead>
                   <tbody className='bg-white divide-y divide-gray-200 '>
-                    {book?.map(b=>(<tr key={b._id}>
+                  {book?.map(b=>(<tr key={b._id}>
                       <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                         {b.name}
                       </td>
   
                       <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                        {b.date}
+                        {b.email}
                       </td>
   
+                      <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
+                        {b.date}
+                      </td>
                       <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                         {b.price}
                       </td>
@@ -111,7 +123,6 @@ const MyBook = () => {
                           {b.status === 'In progress' && ' bg-blue-500'}
                           {b.status === 'Complete' && ' bg-green-500'}
                           {b.status === 'Rejected' && ' bg-red-500'}
-                          
                           `}>
 
                           </span>
@@ -119,15 +130,22 @@ const MyBook = () => {
                         </div>
                       </td>
                       <td className='px-4 py-4 text-sm whitespace-nowrap'>
+                      <div className='flex items-center gap-x-6'>
                         <button
-                        disabled={b.status !== 'In progress'}
-                        onClick={() => handleStatus(b._id, 'Complete')}
-                          title='Mark Complete'
-                          className='btn text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none disabled:cursor-not-allowed'
-                        >
-                          Complete
+                        onClick={() => handleStatus(b._id, b.status, 'In progress')}
+                        disabled={b.status === 'Complete'}
+                         className='btn text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none'>
+                          Accept
                         </button>
-                      </td>
+                        {/* rejected button */}
+                        <button
+                        onClick={() => handleStatus(b._id, b.status, 'Rejected')}
+                        disabled={b.status === 'Complete'}
+                         className='btn text-gray-500 transition-colors duration-200   hover:text-yellow-500 focus:outline-none'>
+                          Decline
+                        </button>
+                      </div>
+                    </td>
                     </tr>))}
                   </tbody>
                 </table>
@@ -139,4 +157,4 @@ const MyBook = () => {
     )
   }
   
-  export default MyBook
+  export default ServiceDo
