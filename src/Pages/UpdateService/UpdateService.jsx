@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { TabTitle } from "../Utils/title";
@@ -11,6 +11,7 @@ const UpdateService = () => {
 
     const service = useLoaderData();
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const { _id, name, price, area, description, image } = service;
 
@@ -52,16 +53,17 @@ const UpdateService = () => {
                     confirmButtonText: 'Cool'
                   })
             }
+            navigate('/manageService');
         })
 
 
     }
 
     return (
-        <div className=" container mx-auto bg-orange-300 rounded-xl p-3 " data-aos="zoom-in"
+        <div className=" container mx-auto bg-blue-400 rounded-xl p-3 " data-aos="zoom-in"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="3000">
-            <h2 className="text-3xl font-bold text-center mb-8">Add a Services:{name} </h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Updated Services:{name} </h2>
 
             <form onSubmit={handleUpdatedService}>
                 {/* form  Image*/}
@@ -111,13 +113,13 @@ const UpdateService = () => {
                         <div className="label">
                             <span className="label-text text-xl">User Email</span>
                         </div>
-                        <input type="email" name="email" defaultValue={user.email} className="input input-bordered w-full " />
+                        <input type="email" name="email" defaultValue={user?.email} className="input input-bordered w-full " />
                     </label>
                     <label className="form-control md:w-1/2 lg:ml-4">
                         <div className="label">
                             <span className="label-text text-xl">User Name</span>
                         </div>
-                        <input type="text" name="uName" defaultValue={user.displayName} className="input input-bordered w-full" />
+                        <input type="text" name="uName" defaultValue={user?.displayName} className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div>
@@ -125,7 +127,7 @@ const UpdateService = () => {
                         <div className="label">
                             <span className="label-text text-xl">User Image</span>
                         </div>
-                        <input type="text" name="uImage" defaultValue={user.photoURL
+                        <input type="text" name="uImage" defaultValue={user?.photoURL
                         } className="input input-bordered w-full" />
                     </label>
                 </div>

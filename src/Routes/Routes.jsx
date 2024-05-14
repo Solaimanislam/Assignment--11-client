@@ -11,6 +11,7 @@ import Details from "../Pages/PopServices/Details";
 import BookService from "../Pages/BookedService/BookService";
 import ManageService from "../Pages/ManageService/ManageService";
 import UpdateService from "../Pages/UpdateService/UpdateService";
+import MyBook from "../Pages/Mybooking/MyBook";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: 'manageService',
         element: <PrivateRoutes><ManageService></ManageService></PrivateRoutes>
+      },
+      {
+        path: 'my-book',
+        element: <PrivateRoutes><MyBook></MyBook></PrivateRoutes>
       },
       {
         path: 'manageService/updateService/:id',

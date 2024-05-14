@@ -83,7 +83,7 @@ const NavBar = () => {
                                 <Link to='/manageService' className=' text-sky-500 font-semibold'>Manage Service</Link>
                             </li>
                             <li>
-                                <div>Booked-Services</div>
+                                <Link to='/my-book' className=' text-sky-500 font-semibold'>Booked-Services</Link>
                             </li>
                             <li>
                                 <div>Service-To-Do</div>

@@ -18,7 +18,7 @@ const Home = () => {
             {/* Popular service */}
             <div className=" text-center mx-auto mt-6 lg:mt-12">
             <h2 className=" text-3xl lg:text-5xl font-bold mb-4 text-orange-500">Popular Services</h2>
-            <p className=" lg:text-xl font-medium">Home service providers often offer flexible scheduling options, allowing customers to book appointments at times that are convenient for them. This flexibility appeals to individuals with busy schedules or unpredictable routines.</p>
+            <p className=" lg:text-xl font-medium text-purple-500">Home service providers often offer flexible scheduling options, allowing customers to book appointments at times that are convenient for them. This flexibility appeals to individuals with busy schedules or unpredictable routines.</p>
             </div>
             <PopServices></PopServices>
             <div className="card-actions justify-center">
