@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-// import Swal from "sweetalert2";
+
 import { TabTitle } from "../Utils/title";
 import DatePicker from "react-datepicker";
 
@@ -20,13 +20,12 @@ const BookService = () => {
 
     const bookLoader = useLoaderData();
     console.log(bookLoader);
-    // const { _id, name, price, area, description, image } = bookLoader;
+    
 
     const { id } = useParams();
-    // const idInt = parseInt(id);
+    
     const bService = bookLoader.find(service => service._id === id);
-    // console.log(bService);
-    // const { name, price, area, description, email, uName, image, uImage } = bService || {}
+    
 
     const handleServiceSubmission = async event => {
 
@@ -70,27 +69,7 @@ const BookService = () => {
             console.log(err);
         }
 
-        // send data to the server
-
-        // fetch('http://localhost:5000/services', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newService)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Service Added Successfully',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Cool'
-        //             })
-        //         }
-        //     })
+      
 
 
     }
