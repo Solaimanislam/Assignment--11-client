@@ -16,7 +16,7 @@ const ServiceDo = () => {
         const { data } = await axios(`http://localhost:5000/service-do/${user?.email}`)
         setBook(data)
     }
-    console.log(book);
+    
 
     // handleStatus
     const handleStatus = async (id, prevStatus, status) => {

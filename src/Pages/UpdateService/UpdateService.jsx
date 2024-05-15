@@ -31,7 +31,7 @@ const UpdateService = () => {
 
         const updatedService = { name, price, area, description, email, uName, image, uImage};
 
-        // console.log(updatedService);
+        
 
         // send data to the server
 

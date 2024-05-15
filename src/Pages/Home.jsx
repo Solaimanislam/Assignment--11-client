@@ -11,8 +11,7 @@ import Contact from "./Contact/Contact";
 const Home = () => {
     TabTitle('Home');
 
-    // const service = useLoaderData();
-    // console.log(service);
+    
 
     return (
         <div className=" font-lato">

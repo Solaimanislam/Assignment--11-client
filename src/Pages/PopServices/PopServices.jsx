@@ -5,7 +5,7 @@ import PopCard from "./PopCard";
 const PopServices = () => {
 
     const services = useLoaderData();
-    console.log(services);
+    
 
     return (
         <div>

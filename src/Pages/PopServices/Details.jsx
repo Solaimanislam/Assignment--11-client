@@ -14,12 +14,12 @@ const Details = () => {
 
     const loaderService = useLoaderData();
 
-    // console.log(loaderService);
+    
 
     const { id } = useParams();
-    // const idInt = parseInt(id);
+    
     const service = loaderService.find(service => service._id === id);
-    // console.log(service);
+    
 
 
     return (
