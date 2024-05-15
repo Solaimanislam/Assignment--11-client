@@ -8,7 +8,7 @@ const AddService = () => {
     TabTitle('AddService');
 
     const { user } = useContext(AuthContext);
-    // console.log(user);
+    
 
     const handleAddService = event => {
         event.preventDefault();

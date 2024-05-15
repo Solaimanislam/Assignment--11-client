@@ -15,7 +15,7 @@ const AllServicep = () => {
     const [search, setSearch] = useState('')
 
     TabTitle('Service');
-    // const allServices = useLoaderData();
+    
 
     useEffect(() => {
         const getDate = async () => {
