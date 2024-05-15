@@ -13,7 +13,7 @@ const ServiceDo = () => {
     }, [user])
 
     const getDate = async () => {
-        const { data } = await axios(`http://localhost:5000/service-do/${user?.email}`)
+        const { data } = await axios(`https://home-service-server-mu.vercel.app/service-do/${user?.email}`)
         setBook(data)
     }
     
@@ -21,8 +21,8 @@ const ServiceDo = () => {
     // handleStatus
     const handleStatus = async (id, prevStatus, status) => {
         if(prevStatus === status) return console.log('Error');
-        console.log(id,prevStatus, status);
-        const {data} = await axios.patch(`http://localhost:5000/book/${id}`, {status})
+        // console.log(id,prevStatus, status);
+        const {data} = await axios.patch(`https://home-service-server-mu.vercel.app/book/${id}`, {status})
         console.log(data);
         getDate()
     }

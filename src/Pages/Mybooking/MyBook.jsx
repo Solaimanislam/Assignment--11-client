@@ -14,14 +14,14 @@ const MyBook = () => {
     }, [user])
 
     const getDate = async () => {
-        const { data } = await axios(`http://localhost:5000/my-book/${user?.email}`)
+        const { data } = await axios(`https://home-service-server-mu.vercel.app/my-book/${user?.email}`)
         setBook(data)
     }
     // handleStatus
     const handleStatus = async (id, status) => {
        
-        console.log(id);
-        const {data} = await axios.patch(`http://localhost:5000/book/${id}`, {status})
+        // console.log(id);
+        const {data} = await axios.patch(`https://home-service-server-mu.vercel.app/book/${id}`, {status})
         console.log(data);
         getDate()
     }
@@ -111,7 +111,7 @@ const MyBook = () => {
                           {b.status === 'In progress' && ' bg-blue-500'}
                           {b.status === 'Complete' && ' bg-green-500'}
                           {b.status === 'Rejected' && ' bg-red-500'}
-                          
+
                           `}>
 
                           </span>

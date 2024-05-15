@@ -31,7 +31,7 @@ const Login = () => {
             
         }
         catch(err){
-            console.log(err);
+            // console.log(err);
             toast.error(err?.message)
         }
     }
@@ -51,7 +51,7 @@ const Login = () => {
             toast.success('SignIn Successfully')
         }
         catch(err) {
-            console.log(err);
+            // console.log(err);
             toast.error(err?.message)
         }
     }

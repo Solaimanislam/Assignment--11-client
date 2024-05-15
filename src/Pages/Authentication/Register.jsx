@@ -29,7 +29,7 @@ const Registration = () => {
         const name = form.name.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        console.log( email, password, name, photo);
+        // console.log( email, password, name, photo);
         try{
             const result = await createUser(email, password)
             console.log(result);
@@ -39,7 +39,7 @@ const Registration = () => {
             toast.success('SignUp Successfully')
         }
         catch(err){
-            console.log(err);
+            // console.log(err);
             toast.error(err?.message)
         }
     }
@@ -53,7 +53,7 @@ const Registration = () => {
 
         }
         catch (err) {
-            console.log(err);
+            // console.log(err);
             toast.error(err?.message)
         }
     }

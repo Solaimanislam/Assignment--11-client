@@ -19,7 +19,7 @@ const BookService = () => {
     const navigate = useNavigate();
 
     const bookLoader = useLoaderData();
-    console.log(bookLoader);
+    // console.log(bookLoader);
     
 
     const { id } = useParams();
@@ -54,8 +54,8 @@ const BookService = () => {
         console.table(bookData);
 
         try {
-            const { data } = await axios.post('http://localhost:5000/booked', bookData)
-            console.log(data);
+            const { data } = await axios.post('https://home-service-server-mu.vercel.app/booked', bookData)
+            // console.log(data);
             if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
@@ -66,7 +66,7 @@ const BookService = () => {
                 }
                 navigate('/my-book');
         }catch (err) {
-            console.log(err);
+            // console.log(err);
         }
 
       

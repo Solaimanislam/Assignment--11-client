@@ -26,11 +26,11 @@ const AddService = () => {
 
         const newService = { name, price, area, description, email, uName, image, uImage};
 
-        console.log(newService);
+        // console.log(newService);
 
         // send data to the server
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://home-service-server-mu.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -39,7 +39,7 @@ const AddService = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',

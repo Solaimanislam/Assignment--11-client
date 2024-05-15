@@ -19,7 +19,7 @@ const AllServicep = () => {
 
     useEffect(() => {
         const getDate = async () => {
-            const {data} = await axios(`http://localhost:5000/all-service?page=${currentPage}&size=${itemsPerPage}$search=${search}`)
+            const {data} = await axios(`https://home-service-server-mu.vercel.app/all-service?page=${currentPage}&size=${itemsPerPage}$search=${search}`)
             setService(data);
             
         }
@@ -28,20 +28,20 @@ const AllServicep = () => {
 
     useEffect(() => {
         const getCount = async () => {
-            const {data} = await axios(`http://localhost:5000/service-count?search=${search}`)
+            const {data} = await axios(`https://home-service-server-mu.vercel.app/service-count?search=${search}`)
             
             setCount(data.count)
         }
         getCount()
     }, [search])
 
-    console.log(count);
+    // console.log(count);
     const numberOfPage = Math.ceil(count / itemsPerPage)
     const pages = [...Array(numberOfPage).keys()].map(element => element + 1);
 
     // handle pagination button
     const handlePagination = (value) => {
-        console.log(value);
+        // console.log(value);
         setCurrentPage(value);
     }
 
@@ -50,7 +50,7 @@ const AllServicep = () => {
         const text = e.target.search.value;
         setSearch(text);
     } 
-    console.log(search);
+    // console.log(search);
 
     
 

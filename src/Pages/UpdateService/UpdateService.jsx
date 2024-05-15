@@ -35,7 +35,7 @@ const UpdateService = () => {
 
         // send data to the server
 
-        fetch(`http://localhost:5000/services/${_id}`, {
+        fetch(`https://home-service-server-mu.vercel.app/services/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,7 @@ const UpdateService = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data.modifiedCount > 0){
                 Swal.fire({
                     title: 'Success!',

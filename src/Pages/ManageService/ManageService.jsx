@@ -14,7 +14,7 @@ const ManageService = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/manageService/${user?.email}`)
+        fetch(`https://home-service-server-mu.vercel.app/manageService/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setItem(data);
@@ -24,7 +24,7 @@ const ManageService = () => {
     // console.log(item);
 
     const handleDelete = _id => {
-        console.log(_id);
+        // console.log(_id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -37,12 +37,12 @@ const ManageService = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/services/${_id}`, {
+                fetch(`https://home-service-server-mu.vercel.app/services/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",

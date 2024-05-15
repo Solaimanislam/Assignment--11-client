@@ -25,12 +25,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('https://home-service-server-mu.vercel.app/services')
       },
       {
         path: '/service/:id',
         element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('https://home-service-server-mu.vercel.app/services')
       },
       {
         path: '/login',
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: '/bookService/:id',
         element: <PrivateRoutes><BookService></BookService></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('https://home-service-server-mu.vercel.app/services')
       },
       {
         path: 'manageService',
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: 'manageService/updateService/:id',
         element: <UpdateService></UpdateService>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://home-service-server-mu.vercel.app/services/${params.id}`)
       },
     ],
   },
