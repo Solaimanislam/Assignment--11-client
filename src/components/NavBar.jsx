@@ -29,7 +29,7 @@ const NavBar = () => {
         <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
             <div className='flex-1'>
                 <Link to='/' className='flex gap-2 items-center'>
-                    <img className='w-auto h-7' src={logo} alt='' />
+                    <img className='w-auto h-6' src={logo} alt='' />
                     <span className='lg:font-bold lg:text-2xl text-sky-500'>Home<span className=' text-red-600'>S</span>ervice</span>
                 </Link>
             </div>
