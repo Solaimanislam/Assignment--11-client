@@ -6,13 +6,14 @@ import Register from "../Pages/Authentication/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import AddService from "../Pages/AddServices/AddService";
 import Error from "../Pages/Error/Error";
-import AllService from "../Pages/AllService/AllService";
+
 import Details from "../Pages/PopServices/Details";
 import BookService from "../Pages/BookedService/BookService";
 import ManageService from "../Pages/ManageService/ManageService";
 import UpdateService from "../Pages/UpdateService/UpdateService";
 import MyBook from "../Pages/Mybooking/MyBook";
 import ServiceDo from "../Pages/ServiceDo/ServiceDo";
+import AllServicep from "../Pages/AllService/AllServicep";
 
 
 const router = createBrowserRouter([
@@ -46,8 +47,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'allService',
-        element: <AllService></AllService>,
-        loader: () => fetch('http://localhost:5000/services')
+        element: <AllServicep></AllServicep>,
+        
       },
       {
         path: '/bookService/:id',

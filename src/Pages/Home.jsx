@@ -5,6 +5,7 @@ import PopServices from "./PopServices/PopServices";
 import { TabTitle } from "./Utils/title";
 import OurService from "./OurService/OurService";
 import About from "./Abour/About";
+import Contact from "./Contact/Contact";
 
 
 const Home = () => {
@@ -47,6 +48,17 @@ const Home = () => {
                     data-aos-duration="3000">What Our Customers Say About Us</p>
             </div>
             <About></About>
+             {/* About us */}
+
+             <div className=" text-center mx-auto mt-6 lg:mt-12">
+                <h2 className=" text-3xl lg:text-5xl font-bold mb-4 text-orange-800 " data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="3000">Contact US</h2>
+                <p className=" text-base lg:text-xl font-medium" data-aos="zoom-in-up"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="3000">If you are looking for home services, it would be helpful to know your specific needs and location so I can guide you accordingly.</p>
+            </div>
+            <Contact></Contact>
         </div>
     );
 };
